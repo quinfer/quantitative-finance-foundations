@@ -1,0 +1,17 @@
+name: qf-foundations
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - jupyter
+  - statsmodels
+  - pip
+  - pip:
+      - requests        # for scripts/find_dois.py
+      - arch            # GARCH, if you use it later
+      - yfinance        # data access, optional
