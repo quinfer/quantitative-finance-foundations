@@ -66,7 +66,7 @@ If prerequisites aren't met, complete foundational material first.
 
 **Why this matters**: Standard machine learning applied naïvely to finance fails. Data leakage through improper cross-validation, overfitting through extensive hyperparameter search, and ignoring serial dependence all produce strategies that backtest well but fail in practice. López de Prado addresses these issues rigorously.
 
-**Implementation connections**: Implement every method. Demonstrate how standard CV produces overly optimistic results. Show how proper purging and embargo affect performance estimates. Build meta-labeling system. Implement bet sizing strategies. For R users, the `pbo` package implements the Probability of Backtest Overfitting and related diagnostics following Bailey et al.; see [`https://CRAN.R-project.org/package=pbo`](https://CRAN.R-project.org/package=pbo) for documentation and examples.
+**Implementation connections**: Implement every method. Demonstrate how standard CV produces overly optimistic results. Show how proper purging and embargo affect performance estimates. Build meta-labeling system. Implement bet sizing strategies.
 
 **Common difficulties**: Book is dense and assumes sophistication in both finance and machine learning. Some techniques (particularly combinatorial cross-validation) prove computationally expensive. Focus on core concepts—sample weights, proper CV, bet sizing—before advanced techniques.
 
