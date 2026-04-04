@@ -28,7 +28,7 @@ These objectives require integrated development across mathematical foundations,
 
 Begin with **Stochastic Calculus for Finance II** (Shreve), working through Chapters 1-4 on probability spaces, random variables, and conditional expectation. Don't attempt comprehensive mastery—focus on developing intuition for measure-theoretic probability whilst accepting some formalism remains opaque initially.
 
-Concurrently review **Linear Algebra and Its Applications** (Strang), particularly:
+Concurrently review **Introduction to Linear Algebra** (Strang, 6th ed.), particularly:
 
 - Matrix decompositions (eigenvalue, singular value)
 
@@ -38,13 +38,13 @@ Concurrently review **Linear Algebra and Its Applications** (Strang), particular
 
 These concepts appear constantly in portfolio optimisation, principal component analysis, and covariance estimation.
 
-For probability theory specifically, **A Probability Path** (Resnick) Chapters 1-5 develop rigorous treatment without excessive measure theory. Focus on:
+For probability theory specifically, **A Probability Path** (Resnick) develops rigorous treatment without excessive measure theory. Core chapters 1–5 cover probability spaces, random variables, independence, and integration. Then focus on:
 
-- Convergence concepts (in probability, almost surely, in distribution)
+- Convergence concepts — in probability, almost surely, in distribution (Chapter 6)
 
-- Law of large numbers and central limit theorem
+- Law of large numbers (Chapter 7) and central limit theorem (Chapters 8–9)
 
-- Characteristic functions and moment generating functions
+- Martingale theory and conditional expectation (Chapter 10)
 
 ### Python Implementation
 
@@ -56,13 +56,15 @@ Simultaneously begin **Python for Data Analysis** (McKinney), implementing every
 
 - Time series functionality specific to pandas
 
-Then move to **Effective Python** (Slatkin), implementing Items 1-30 which cover core language features and best practices. Pay particular attention to:
+Then move to **Effective Python** (Slatkin, 2nd edition), implementing Items 1-30 which cover core language features and best practices. Pay particular attention to:
 
-- Comprehensions vs. loops (Item 27-30)
+- Comprehensions vs. loops (Items 27-30 in 2nd ed.)
 
 - Generator expressions for large datasets
 
 - Proper exception handling
+
+*Note*: The 3rd edition (2024) expands to 125 items with different numbering. Item references here follow the 2nd edition.
 
 ### First Implementations
 
@@ -82,15 +84,19 @@ These tasks force engagement with real data issues (missing values, corporate ac
 
 ### Time Series Analysis
 
-Work through **Analysis of Financial Time Series** (Tsay) Chapters 1-5:
+Work through **Analysis of Financial Time Series** (Tsay, 3rd ed.):
 
-- Linear time series models (AR, MA, ARMA)
+- Financial time series characteristics (Chapter 1)
 
-- Volatility models (ARCH, GARCH, extensions)
+- Linear time series models — AR, MA, ARMA (Chapter 2)
 
-- Unit roots and cointegration
+- Volatility models — ARCH, GARCH, extensions (Chapter 3)
 
-- State space models and Kalman filtering
+- Nonlinear models (Chapter 4)
+
+- Multivariate time series, unit roots, and cointegration (Chapter 8)
+
+- State space models and Kalman filtering (Chapter 11)
 
 Implement every major example using recent data. Compare results to Tsay's findings. When results differ, investigate why—data period, market regime, implementation details all matter.
 
@@ -136,39 +142,41 @@ Don't attempt comprehensive coverage—focus on methods demonstrably useful in f
 
 ### Microstructure Theory
 
-Study **Market Microstructure Theory** (O'Hara) Chapters 1-5:
+Study **Market Microstructure Theory** (O'Hara) Chapters 1-6:
 
-- Inventory models of dealer behaviour
+- Markets and market-making (Chapter 1)
 
-- Information-based models
+- Inventory models of dealer behaviour (Chapter 2)
 
-- Market design and liquidity provision
+- Information-based models (Chapter 3)
 
-- Price discovery mechanisms
+- Strategic trader models — informed and uninformed (Chapters 4-5)
 
-Then **Empirical Market Microstructure** (Hasbrouck) Chapters 2-6:
+- Information and the price process (Chapter 6)
 
-- Measuring transaction costs
+Then **Empirical Market Microstructure** (Hasbrouck):
 
-- Price impact and market depth
+- Roll model and spread estimation (Chapter 3)
 
-- Information content of trades
+- Sequential trade models and order flow (Chapters 5-7)
 
-- High-frequency data analysis
+- Multivariate models and price discovery (Chapters 9-10)
+
+- Transaction costs and execution strategies (Chapters 14-15)
 
 Understanding microstructure proves essential for realistic strategy implementation. Transaction costs, market impact, and adverse selection often dominate returns in high-turnover strategies.
 
 ### Algorithmic Trading
 
-Work through **Algorithmic and High-Frequency Trading** (Cartea et al.) Chapters 1-7:
+Work through **Algorithmic and High-Frequency Trading** (Cartea et al.):
 
-- Optimal execution (Almgren-Chriss framework)
+- Microstructure and empirical facts (Part I, Chapters 1–4)
 
-- Market making models
+- Optimal execution — Almgren-Chriss framework and extensions (Part III, Chapters 6–8)
 
-- Limit order dynamics
+- Market making models (Chapter 10)
 
-- Adverse selection and information
+- Pairs trading, statistical arbitrage, and order imbalance (Chapters 11–12)
 
 Implement optimal execution strategies. Compare theoretical predictions to empirical execution costs. Identify when theory breaks down and why.
 
@@ -212,7 +220,7 @@ Work through **Advances in Financial Machine Learning** (López de Prado):
 
 Pay particular attention to Chapters 4 (sample weights), 7 (cross-validation), 11 (bet sizing), and 12 (backtesting). These chapters address implementation realities often ignored in academic treatments.
 
-Study **Big Data and Machine Learning in Quantitative Investment** (Jurczenko) selected chapters on:
+Study **Big Data and Machine Learning in Quantitative Investment** (Guida, ed., Wiley, 2019) selected chapters on:
 
 - Alternative data sources and preprocessing
 

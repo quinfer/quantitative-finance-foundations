@@ -155,7 +155,7 @@ If prerequisites aren't met, complete introductory Python course first (e.g., Py
 
 **When to use**: After establishing Python competency. Martin's principles help write code that remains maintainable as projects grow complex. Particularly valuable for larger projects or collaborative work.
 
-### Test-Driven Development in Python (Harry Percival)
+### Test-Driven Development with Python (Harry Percival)
 
 **Purpose**: Comprehensive guide to test-driven development and building robust applications with automated testing.
 
