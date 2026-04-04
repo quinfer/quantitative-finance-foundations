@@ -408,5 +408,5 @@ If you can accomplish these tasks, econometric preparation is adequate for quant
 
 ---
 
-*This resource reflects teaching experience at Ulster University Business School's Centre for Financial and Regulatory Technology.*
+*This resource reflects teaching experience at Ulster University Business School's Centre for Finance and Responsible Technology.*
 

@@ -28,7 +28,7 @@ An initial review (April 2026) identified multiple factual errors, structural in
 | 1.7 | IMPORTANT | `CURRICULUM.md`, `resources/advanced-topics.md` | Book attributed to "Jurczenko"; actually edited by Tony Guida | Corrected to Guida |
 | 1.8 | IMPORTANT | `resources/econometric-methods.md` | Mixtape described as having "extensive Python code"; actually R and Stata | Corrected to R/Stata |
 | 1.9 | IMPORTANT | `resources/market-microstructure.md` | Hasbrouck URL wrong (`people.stern.nyu.edu`) | Fixed to `pages.stern.nyu.edu/~jhasbrou/` |
-| 1.10 | IMPORTANT | Multiple files | "Centre for Finance and Responsible Technology" incorrect | Changed to "Centre for Financial and Regulatory Technology" everywhere |
+| 1.10 | — | Multiple files | *(Prior review error)* Centre name was incorrectly changed to "Financial and Regulatory Technology" | **Reverted** to the correct name: **Centre for Finance and Responsible Technology** (maintainer confirmation) |
 | 1.11 | IMPORTANT | `LICENSE` | "Dr Barry Quinn" inconsistent with "Prof" elsewhere | Changed to "Prof Barry Quinn" |
 | 1.12 | IMPORTANT | `resources/market-microstructure.md` | Lyons book title wrong ("The Microstructure of Foreign Exchange Markets") | Corrected to "The Microstructure Approach to Exchange Rates" |
 | 1.13 | IMPORTANT | `resources/programming-practices.md` | Percival book title wrong ("Test-Driven Development in Python") | Corrected to "Test-Driven Development with Python" |

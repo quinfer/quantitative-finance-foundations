@@ -566,4 +566,4 @@ If you can accomplish these tasks, microstructure knowledge is adequate for real
 
 ---
 
-*This resource reflects teaching experience and industry collaboration at Ulster University Business School's Centre for Financial and Regulatory Technology.*
+*This resource reflects teaching experience and industry collaboration at Ulster University Business School's Centre for Finance and Responsible Technology.*

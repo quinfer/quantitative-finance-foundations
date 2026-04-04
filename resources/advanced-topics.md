@@ -420,5 +420,5 @@ Continuous learning essential. Quantitative finance evolves as markets change, d
 
 ---
 
-*This resource reflects teaching experience at Ulster University Business School's Centre for Financial and Regulatory Technology.*
+*This resource reflects teaching experience at Ulster University Business School's Centre for Finance and Responsible Technology.*
 

@@ -6,7 +6,7 @@ A structured curriculum for finance students developing rigorous quantitative ca
 
 This repository provides curated guidance for students transitioning from traditional finance education to quantitative research and implementation. It emphasises methodological foundations over superficial familiarity with tools, focusing on resources that combine theoretical rigour with empirical validation and practical implementability.
 
-**Maintained by**: Prof Barry Quinn, Ulster University Business School, Centre for Financial and Regulatory Technology
+**Maintained by**: Prof Barry Quinn, Ulster University Business School, Centre for Finance and Responsible Technology
 
 **Selection Criteria**: Resources included here meet standards of mathematical rigour, empirical validation, and practical implementation. Preference is given to works that have demonstrated lasting value over trendy but untested approaches. This curriculum reflects methods taught in advanced quantitative finance programmes and used in systematic investment research.
 
@@ -106,13 +106,13 @@ If you use this curriculum in teaching or research, please cite:
 
 ```
 Quinn, B. (2024). Quantitative Finance Foundations. 
-Centre for Financial and Regulatory Technology, 
+Centre for Finance and Responsible Technology, 
 Ulster University Business School.
 ```
 
 ## Institutional Context
 
-This curriculum complements Ulster University Business School's Centre for Financial and Regulatory Technology programmes, which emphasise rigorous quantitative methods applied to real financial problems whilst maintaining awareness of regulatory, ethical, and societal implications. We welcome collaboration with other institutions developing similar capabilities.
+This curriculum complements Ulster University Business School's Centre for Finance and Responsible Technology programmes, which emphasise rigorous quantitative methods applied to real financial problems whilst maintaining awareness of regulatory, ethical, and societal implications. We welcome collaboration with other institutions developing similar capabilities.
 
 ## License
 

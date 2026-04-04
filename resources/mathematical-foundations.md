@@ -311,5 +311,5 @@ These advanced resources become valuable after establishing foundations, particu
 
 ---
 
-*This resource reflects teaching experience at Ulster University Business School's Centre for Financial and Regulatory Technology. Questions or suggestions welcome via repository issues.*
+*This resource reflects teaching experience at Ulster University Business School's Centre for Finance and Responsible Technology. Questions or suggestions welcome via repository issues.*
 
