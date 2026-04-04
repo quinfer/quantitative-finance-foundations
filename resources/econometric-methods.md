@@ -96,7 +96,7 @@ If prerequisites aren't met, review statistical foundations before attempting fi
 
 **Common difficulties**: Students often struggle with identifying appropriate instruments or convincing exclusion restrictions. The key is careful institutional reasoning about what affects treatment but not outcomes directly. Economics discipline around identification proves valuable beyond specific methods.
 
-**Complementary resource**: *Causal Inference: The Mixtape* (Cunningham) provides extensive Python code examples for causal inference methods. Available free online: https://mixtape.scunning.com/
+**Complementary resource**: *Causal Inference: The Mixtape* (Cunningham) provides detailed causal inference exposition with R and Stata code examples. Available free online: https://mixtape.scunning.com/. Community-contributed Python translations exist but are not the primary offering.
 
 ### The Elements of Statistical Learning (Hastie, Tibshirani & Friedman)
 
@@ -180,7 +180,7 @@ If prerequisites aren't met, review statistical foundations before attempting fi
 
 **When to use**: When working with panel datasets combining cross-sectional and time series variation (firm-level data, international returns, etc.). More specialised than core texts but essential for certain research questions.
 
-### Bayesian Econometric Methods (Chan & Koop)
+### Bayesian Econometric Methods (Chan, Koop, Poirier & Tobias)
 
 **Purpose**: Modern Bayesian approach to econometric problems, particularly valuable for complex hierarchical models and incorporating prior information.
 

@@ -218,7 +218,7 @@ Work through **Advances in Financial Machine Learning** (López de Prado):
 
 Pay particular attention to Chapters 4 (sample weights), 7 (cross-validation), 11 (bet sizing), and 12 (backtesting). These chapters address implementation realities often ignored in academic treatments.
 
-Study **Big Data and Machine Learning in Quantitative Investment** (Jurczenko) selected chapters on:
+Study **Big Data and Machine Learning in Quantitative Investment** (Guida, ed., Wiley, 2019) selected chapters on:
 
 - Alternative data sources and preprocessing
 

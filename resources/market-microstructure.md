@@ -115,7 +115,7 @@ If prerequisites aren't met, develop these foundations before attempting microst
 
 **Common difficulties**: High-frequency data requires careful cleaning—bad ticks, reporting errors, and exchange idiosyncrasies abound. Students often underestimate data preprocessing effort. Hasbrouck addresses these issues, but applying methods to actual data reveals additional complications.
 
-**Complementary resource**: Hasbrouck's online materials include code examples and datasets: http://people.stern.nyu.edu/jhasbrou/
+**Complementary resource**: Hasbrouck's online materials include code examples and datasets: https://pages.stern.nyu.edu/~jhasbrou/
 
 ### Algorithmic and High-Frequency Trading (Álvaro Cartea, Sebastian Jaimungal & José Penalva)
 
@@ -163,9 +163,9 @@ If prerequisites aren't met, develop these foundations before attempting microst
 
 **When to use**: For understanding institutional details and practical trading considerations. Complements theoretical texts with real-world context. Excellent reference when encountering unfamiliar order types or market structures.
 
-### The Microstructure of Foreign Exchange Markets (Richard Lyons)
+### The Microstructure Approach to Exchange Rates (Richard K. Lyons)
 
-**Purpose**: Develops dealer-driven market microstructure model specifically for FX markets. While predating electronic trading dominance, provides valuable framework for understanding order flow and price discovery in OTC markets.
+**Purpose**: Bridges exchange-rate economics and microstructure finance, examining how trading mechanisms and information flows determine exchange rates. Published by MIT Press (2001). While predating full electronic trading dominance, provides valuable framework for understanding order flow and price discovery in OTC markets.
 
 **Key contributions**:
 

@@ -164,7 +164,7 @@ If prerequisites aren't met, complete foundational material first.
 
 ## Supplementary Resources
 
-### Big Data and Machine Learning in Quantitative Investment (Jurczenko, ed.)
+### Big Data and Machine Learning in Quantitative Investment (Tony Guida, ed.)
 
 **Purpose**: Collection of papers applying modern data science methods to quantitative investment, covering alternative data, dimension reduction, and ensemble methods.
 
