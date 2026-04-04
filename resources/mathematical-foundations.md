@@ -38,9 +38,9 @@ Don't expect immediate mastery of all measure-theoretic details. Focus on develo
 
 **Complementary resource**: *Stochastic Calculus for Finance I* (Shreve) covers discrete-time models and provides gentler introduction if continuous-time material proves initially overwhelming.
 
-### Linear Algebra and Its Applications (Gilbert Strang)
+### Introduction to Linear Algebra (Gilbert Strang, 6th edition)
 
-**What it provides**: Intuitive yet rigorous treatment of linear algebra emphasising geometric understanding and applications. Strang focuses on concepts that actually matter for applications rather than comprehensive theoretical coverage.
+**What it provides**: Intuitive yet rigorous treatment of linear algebra emphasising geometric understanding and applications. Strang focuses on concepts that actually matter for applications rather than comprehensive theoretical coverage. The 6th edition (2023) is recommended; his earlier *Linear Algebra and Its Applications* covers similar ground but with a different chapter layout.
 
 **How to use it**: Prioritise chapters directly relevant to quantitative finance:
 - Chapter 1: Introduction to Vectors (inner products, projections)
@@ -55,20 +55,22 @@ The eigenvalue and SVD chapters prove particularly important for portfolio optim
 
 **Why this matters**: Nearly all portfolio optimisation, risk modelling, and factor analysis involves matrix operations. Poor understanding of linear algebra leads to implementations that fail mysteriously when covariance matrices become ill-conditioned or data is nearly collinear.
 
-**Complementary resource**: Strang's *Introduction to Linear Algebra* provides gentler treatment if applications version proves too dense. His MIT OpenCourseWare lectures (available free) offer excellent video supplement.
+**Complementary resource**: Strang's MIT OpenCourseWare lectures (available free) offer an excellent video supplement to this text.
 
 ### A Probability Path (Sidney Resnick)
 
 **What it provides**: Rigorous probability theory without excessive measure-theoretic formalism. Resnick develops intuition alongside formal definitions, making abstract concepts accessible whilst maintaining mathematical precision.
 
-**How to use it**: Focus on Chapters 1-5:
-- Chapter 1: Sets and Events (basic probability spaces)
-- Chapter 2: Random Variables and Distributions (rigorous treatment)
-- Chapter 3: Transforms and Convergence (characteristic functions, generating functions)
-- Chapter 4: Sums and Symmetry (laws of large numbers, central limit theorem)
-- Chapter 5: Conditioning and Martingales (conditional expectation, martingale concepts)
+**How to use it**: Work through the following chapters:
+- Chapters 1–2: Sets, Events, and Probability Spaces (measure-theoretic foundations)
+- Chapter 3: Random Variables, Elements, and Measurable Maps (rigorous treatment)
+- Chapter 4: Independence (product measures, independent sequences)
+- Chapter 5: Integration and Expectation (Lebesgue integration, computing expectations)
+- Chapter 6: Convergence Concepts (in probability, almost surely, in Lp)
+- Chapters 7–9: Laws of Large Numbers, Convergence in Distribution, and the Central Limit Theorem (characteristic functions, generating functions)
+- Chapter 10: Martingales (conditional expectation, martingale concepts)
 
-The convergence concepts (Chapter 4) and conditioning (Chapter 5) prove essential for understanding asymptotic theory in econometrics and properties of trading strategies.
+The convergence concepts (Chapters 6–9) and martingale theory (Chapter 10) prove essential for understanding asymptotic theory in econometrics and properties of trading strategies.
 
 **Implementation connections**: Implement Monte Carlo simulation illustrating different convergence concepts. Verify law of large numbers and central limit theorem empirically. Implement martingale betting strategies and verify why they fail (martingale property doesn't guarantee profit).
 

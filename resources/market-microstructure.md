@@ -25,11 +25,11 @@ If prerequisites aren't met, develop these foundations before attempting microst
 
 **How to use it**: Work through systematically:
 
-**Chapter 1: Market Microstructure: An Overview**
+**Chapter 1: Markets and Market-Making**
 
 - Why microstructure matters for asset pricing
 - Alternative trading mechanisms
-- Relationship between microstructure and market efficiency
+- Role of market makers
 
 **Chapter 2: Inventory Models**
 
@@ -43,23 +43,24 @@ If prerequisites aren't met, develop these foundations before attempting microst
 - Glosten-Milgrom sequential trade model
 - Kyle model of strategic informed trading
 
-**Chapter 4: Strategic Trader Models**
+**Chapters 4–5: Strategic Trader Models (Informed and Uninformed)**
 
 - Market manipulation and corners
 - Bluffing and signalling in markets
 - Sunshine trading and pre-announcement
 
-**Chapter 5: Market Structures**
+**Chapter 6: Information and the Price Process**
 
-- Dealer markets vs. order-driven markets
-- Hybrid market structures
+- How information is impounded into prices
+- Price discovery mechanisms
+- Relationship between microstructure and market efficiency
+
+**Chapters 7–9: Market Viability, Liquidity, and Performance**
+
+- Market viability and stability conditions
+- Liquidity and relationships between markets
 - Competition between trading venues
-
-**Chapter 6: Empirical Evidence**
-
-- Measuring components of bid-ask spread
-- Tests of information models
-- Cross-sectional determinants of liquidity
+- Market design and performance evaluation
 
 **Why this matters**: Microstructure theory explains why bid-ask spreads exist, how informed traders extract profits, and what determines market liquidity. These aren't minor frictions—they fundamentally affect trading profitability. Strategies that appear profitable ignoring microstructure often lose money after accounting for realistic transaction costs and market impact.
 
@@ -73,41 +74,40 @@ If prerequisites aren't met, develop these foundations before attempting microst
 
 **How to use it**: Focus on methods most relevant to quantitative trading:
 
-**Chapter 2: The Bid-Ask Spread**
+**Chapters 2–3: Trading Mechanisms and the Roll Model**
 
-- Roll's spread estimator
-- Effective spreads and price impact
-- High-frequency spread measurement
+- Alternative market structures and how they work
+- Roll's spread estimator from price autocovariance
+- Effective spreads and their measurement
 
-**Chapter 3: Measuring Information in Prices**
+**Chapters 4–5: Time Series Analysis and Sequential Trade Models**
 
-- Variance ratios and random walk tests
-- Price discovery metrics
-- Information shares
-
-**Chapter 4: The Information Content of Trades**
-
+- Univariate time series tools for microstructure
+- Sequential trade models (Glosten-Milgrom framework)
 - Signed trade classification (Lee-Ready algorithm)
-- Price impact of trades
+
+**Chapters 6–7: Order Flow, PIN, and Strategic Trade Models**
+
+- Order flow and the Probability of Informed Trading (PIN)
+- Kyle-type strategic trade models and price impact
 - Trade informativeness measures
 
-**Chapter 5: Liquidity and Trading Costs**
+**Chapters 8–10: Generalised Models and Multi-Security Analysis**
 
-- Transaction cost measurement
-- Intraday liquidity patterns
-- Cross-sectional determinants of liquidity
+- Generalised Roll model of trade prices
+- Multivariate linear microstructure models
+- Multiple securities and multiple prices (price discovery, information shares)
 
-**Chapter 6: Market Depth**
+**Chapters 11–13: Dealers, Limit Order Markets, and Depth**
 
-- Order book dynamics
-- Resilience and depth
-- Price impact functions
+- Dealer inventory models and empirical evidence
+- Limit order markets and order book dynamics
+- Market depth, resilience, and price impact functions
 
-**Chapter 7: High-Frequency Data Analysis**
+**Chapters 14–15: Trading Costs and Execution**
 
-- Microstructure noise in high-frequency prices
-- Realised volatility estimation
-- Bid-ask bounce and optimal sampling
+- Transaction cost measurement: retrospective and comparative
+- Prospective trading costs and execution strategies
 
 **Implementation strategy**: Obtain high-frequency data (TAQ, Thomson Reuters Tick History, or similar). Implement spread measures, price impact estimation, and signed trade classification. Compare results to published studies. Differences often reveal important institutional details.
 
@@ -121,37 +121,26 @@ If prerequisites aren't met, develop these foundations before attempting microst
 
 **What it provides**: Modern treatment bridging microstructure theory, stochastic optimal control, and algorithmic trading implementation. Develops optimal execution models, market making strategies, and high-frequency trading methods with rigorous mathematical foundations.
 
-**How to use it**: Focus on core topics:
+**How to use it**: The book is organised in three parts. Focus on core topics:
 
-**Chapter 2: Statistical Properties of Trading Processes**
+**Part I — Microstructure and Empirical Facts (Chapters 1–4)**
 
-- Stylised facts of high-frequency data
-- Hawkes processes for order flow
-- Realised variance and covariance
+- Electronic markets and the limit order book (Chapter 1)
+- Primer on microstructure (Chapter 2)
+- Empirical evidence on prices, returns, activity, and market quality (Chapters 3–4)
 
-**Chapter 3: Optimal Execution**
+**Part II — Mathematical Tools (Chapter 5)**
 
-- Almgren-Chriss framework
-- Dynamic programming approach
-- Extensions for stochastic liquidity
+- Stochastic optimal control and stopping — the mathematical framework underlying later chapters
 
-**Chapter 4: Market Making**
+**Part III — Algorithmic and High-Frequency Trading (Chapters 6–12)**
 
-- Optimal bid-ask quoting
-- Inventory risk management
-- Competition among market makers
-
-**Chapter 5: Optimal Liquidation and Trading**
-
-- Liquidation with price impact
-- Execution games
-- Dark pools and hidden liquidity
-
-**Chapter 6: High-Frequency Trading Strategies**
-
-- Statistical arbitrage at high frequency
-- Latency arbitrage
-- Order flow toxicity
+- Optimal execution with continuous trading (Chapters 6–7): Almgren-Chriss framework and extensions
+- Optimal execution with limit and market orders (Chapter 8)
+- Targeting volume — VWAP and related strategies (Chapter 9)
+- Market making: optimal bid-ask quoting, inventory risk (Chapter 10)
+- Pairs trading and statistical arbitrage (Chapter 11)
+- Order imbalance and flow toxicity (Chapter 12)
 
 **Why this matters**: Optimal execution theory quantifies tradeoff between market impact and timing risk. Rather than executing orders naïvely, optimal strategies balance urgency against price impact. Market making models explain how liquidity providers profit whilst managing inventory risk. These frameworks guide real trading algorithms.
 
