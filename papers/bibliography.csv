@@ -1,0 +1,29 @@
+key,title,authors,year,journal
+fama-french-1992,The Cross-Section of Expected Stock Returns,Fama; French,1992,Journal of Finance
+fama-french-1993,Common Risk Factors in the Returns on Stocks and Bonds,Fama; French,1993,Journal of Financial Economics
+carhart-1997,On Persistence in Mutual Fund Performance,Carhart,1997,Journal of Finance
+fama-french-2015,A Five-Factor Asset Pricing Model,Fama; French,2015,Journal of Financial Economics
+hou-xue-zhang-2015,Digesting Anomalies: An Investment Approach,Hou; Xue; Zhang,2015,Review of Financial Studies
+harvey-liu-zhu-2016,... and the Cross-Section of Expected Returns,Harvey; Liu; Zhu,2016,Review of Financial Studies
+mclean-pontiff-2016,Does Academic Research Destroy Stock Return Predictability?,McLean; Pontiff,2016,Journal of Finance
+hou-xue-zhang-2020,Replicating Anomalies,Hou; Xue; Zhang,2020,Review of Financial Studies
+roll-1984,A Simple Implicit Measure of the Effective Bid-Ask Spread in an Efficient Market,Roll,1984,Journal of Finance
+glosten-milgrom-1985,Bid Ask and Transaction Prices in a Specialist Market with Heterogeneously Informed Traders,Glosten; Milgrom,1985,Journal of Financial Economics
+kyle-1985,Continuous Auctions and Insider Trading,Kyle,1985,Econometrica
+amihud-2002,Illiquidity and Stock Returns: Cross-Section and Time-Series Effects,Amihud,2002,Journal of Financial Markets
+hasbrouck-1991,Measuring the Information Content of Stock Trades,Hasbrouck,1991,Journal of Finance
+hasbrouck-2002,Stalking the Efficient Price in Market Microstructure Specifications,Hasbrouck,2002,Journal of Financial Markets
+engle-1982,Autoregressive Conditional Heteroscedasticity with Estimates of the Variance of UK Inflation,Engle,1982,Econometrica
+bollerslev-1986,Generalized Autoregressive Conditional Heteroskedasticity,Bollerslev,1986,Journal of Econometrics
+dickey-fuller-1979,Distribution of the Estimators for Autoregressive Time Series with a Unit Root,Dickey; Fuller,1979,Journal of the American Statistical Association
+johansen-1988,Statistical Analysis of Cointegration Vectors,Johansen,1988,Journal of Economic Dynamics and Control
+newey-west-1987,A Simple Positive Semi-Definite Heteroskedasticity and Autocorrelation Consistent Covariance Matrix,Newey; West,1987,Econometrica
+white-1980,A Heteroskedasticity-Consistent Covariance Matrix Estimator and a Direct Test for Heteroskedasticity,White,1980,Econometrica
+hansen-1982,Large Sample Properties of Generalized Method of Moments Estimators,Hansen,1982,Econometrica
+gu-kelly-xiu-2020,Empirical Asset Pricing via Machine Learning,Gu; Kelly; Xiu,2020,Review of Financial Studies
+rasekhschaffe-jones-2019,Machine Learning for Stock Selection,Rasekhschaffe; Jones,2019,Financial Analysts Journal
+bailey-etal-2014,The Probability of Backtest Overfitting,Bailey; Borwein; Lopez de Prado; Zhu,2014,Journal of Computational Finance
+markowitz-1952,Portfolio Selection,Markowitz,1952,Journal of Finance
+black-litterman-1992,Global Portfolio Optimization,Black; Litterman,1992,Financial Analysts Journal
+demiguel-etal-2009,Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?,DeMiguel; Garlappi; Uppal,2009,Review of Financial Studies
+ledoit-wolf-2004,A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices,Ledoit; Wolf,2004,Journal of Multivariate Analysis

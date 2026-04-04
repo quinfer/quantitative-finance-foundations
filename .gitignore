@@ -41,6 +41,7 @@ ENV/
 
 # Data files (often large)
 *.csv
+!papers/bibliography.csv
 *.xlsx
 *.h5
 *.hdf5
