@@ -277,7 +277,7 @@ All core documentation is complete. The repository is ready for use and ready fo
 
 ---
 
-**Maintained by**: Prof Barry Quinn, Ulster University Business School, Centre for Finance and Responsible Technology
+**Maintained by**: Prof Barry Quinn, Ulster University Business School, Centre for Financial and Regulatory Technology
 
 **Contributors welcome**: See CONTRIBUTING.md for guidelines
 

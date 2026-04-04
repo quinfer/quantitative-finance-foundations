@@ -851,4 +851,4 @@ If you can accomplish these tasks, implementation skills are adequate for profes
 
 ---
 
-*This resource reflects software engineering practices developed at Ulster University Business School's Centre for Finance and Responsible Technology for maintaining research code quality and reproducibility.*
+*This resource reflects software engineering practices developed at Ulster University Business School's Centre for Financial and Regulatory Technology for maintaining research code quality and reproducibility.*

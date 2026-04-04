@@ -342,5 +342,5 @@ All paths require continuous learning. Quantitative finance evolves as markets c
 
 ---
 
-*This curriculum reflects methods taught at Ulster University Business School's Centre for Finance and Responsible Technology and builds on experience teaching quantitative finance to masters and PhD students.*
+*This curriculum reflects methods taught at Ulster University Business School's Centre for Financial and Regulatory Technology and builds on experience teaching quantitative finance to masters and PhD students.*
 

@@ -331,6 +331,6 @@ Over time, this process builds a **personal library of deeply understood papers*
 
 ---
 
-*This reading list supports the curriculum at Ulster University Business School’s Centre for Finance and Responsible Technology and is intended as a living document. Suggestions for additions or re‑organisation are welcome via issues and pull requests (see `CONTRIBUTING.md`).*
+*This reading list supports the curriculum at Ulster University Business School’s Centre for Financial and Regulatory Technology and is intended as a living document. Suggestions for additions or re‑organisation are welcome via issues and pull requests (see `CONTRIBUTING.md`).*
 
 
