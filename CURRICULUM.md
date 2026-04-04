@@ -56,13 +56,15 @@ Simultaneously begin **Python for Data Analysis** (McKinney), implementing every
 
 - Time series functionality specific to pandas
 
-Then move to **Effective Python** (Slatkin), implementing Items 1-30 which cover core language features and best practices. Pay particular attention to:
+Then move to **Effective Python** (Slatkin, 2nd edition), implementing Items 1-30 which cover core language features and best practices. Pay particular attention to:
 
-- Comprehensions vs. loops (Item 27-30)
+- Comprehensions vs. loops (Items 27-30 in 2nd ed.)
 
 - Generator expressions for large datasets
 
 - Proper exception handling
+
+*Note*: The 3rd edition (2024) expands to 125 items with different numbering. Item references here follow the 2nd edition.
 
 ### First Implementations
 

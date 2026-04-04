@@ -7,7 +7,7 @@ This directory contains detailed guidance on essential readings organised by the
 - Implementation notes and practical guidance
 - Integration with the overall curriculum progression
 
-## Planned Resource Documents
+## Resource Documents
 
 - `mathematical-foundations.md` - Core mathematical prerequisites and advanced topics
 - `econometric-methods.md` - Time series analysis, causal inference, and statistical learning

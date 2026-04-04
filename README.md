@@ -105,10 +105,9 @@ Suggestions for additional resources welcome via issues, but must meet stated cr
 If you use this curriculum in teaching or research, please cite:
 
 ```
-Quinn, B. (2025). Quantitative Finance Foundations. 
+Quinn, B. (2024). Quantitative Finance Foundations. 
 Centre for Financial and Regulatory Technology, 
 Ulster University Business School.
-https://github.com/quinfer/quantitative-finance-foundations
 ```
 
 ## Institutional Context
@@ -125,6 +124,6 @@ This curriculum builds on teaching experience, research collaborations, and conv
 
 ---
 
-**Last Updated**: November 2024  
+**Last Updated**: April 2026  
 **Status**: Active development and maintenance
 
