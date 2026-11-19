@@ -1,29 +1,16 @@
 # Advanced Topics in Quantitative Finance
 
-## Purpose and Scope
+A better return forecast can lead to a worse strategy if it trades too often. To evaluate a new signal, follow it from the data available at the decision date through portfolio weights, trading costs and later outcomes. Use the readings below to decide which comparison can tell you whether the signal adds value. [Advanced applications in the curriculum](../CURRICULUM.md#phase-4-advanced-applications-months-1012)
 
-This section covers advanced applications building on mathematical, econometric, and microstructure foundations: factor investing and asset pricing, machine learning applications to finance, alternative data, and research frontiers. The focus remains on methods with demonstrated value and rigorous validation.
+## Preparation
 
-These topics represent active research areas. Unlike established methods covered earlier, best practices continue evolving. Maintain critical perspective: what works, what doesn't, and why.
-
-## Prerequisites
-
-Before engaging with advanced topics:
-
-- **Mathematical foundations**: Probability, linear algebra, optimisation
-- **Econometric methods**: Time series, cross-sectional methods, causal inference
-- **Programming**: Ability to implement complex methods and conduct rigorous backtests
-- **Market microstructure**: Understanding of transaction costs and execution
-
-If prerequisites aren't met, complete foundational material first.
+Begin here once you can build a simple factor or forecasting benchmark, evaluate it on later observations and explain how execution affects the result. Use the [econometrics guide](econometric-methods.md) to review validation or the [market microstructure guide](market-microstructure.md) to review implementation costs.
 
 ## Core Resources
 
 ### Advances in Financial Machine Learning (Marcos López de Prado)
 
-**What it provides**: Rigorous treatment of machine learning for systematic trading, addressing practical implementation issues ignored in most academic treatments. Essential for anyone applying machine learning to finance.
-
-**How to use it**: Work through systematically:
+Choose the chapters that address your design. Start with sample weights and cross-validation if outcome windows overlap. Use the backtesting chapters to compare ways of evaluating a strategy. [Publisher's contents](https://www.wiley.com/en-au/Advances%2Bin%2BFinancial%2BMachine%2BLearning-p-9781119482086)
 
 **Chapter 1: Financial Machine Learning as a Distinct Subject**
 - Why finance differs from other ML applications
@@ -46,8 +33,7 @@ If prerequisites aren't met, complete foundational material first.
 
 **Chapter 7: Cross-Validation in Finance**
 - Why standard k-fold CV fails
-- Purging and embargo
-- Combinatorial cross-validation
+- Purging and embargo for overlapping or nearby observations
 
 **Chapter 10: Bet Sizing**
 - From probability to position sizing
@@ -60,15 +46,10 @@ If prerequisites aren't met, complete foundational material first.
 - How to backtest properly
 
 **Chapter 12: Backtesting through Cross-Validation**
-- Walk-forward analysis
-- Avoiding look-ahead bias
-- Realistic performance estimation
+- Walk-forward analysis and cross-validation
+- Combinatorial purged cross-validation
 
-**Why this matters**: Standard machine learning applied naïvely to finance fails. Data leakage through improper cross-validation, overfitting through extensive hyperparameter search, and ignoring serial dependence all produce strategies that backtest well but fail in practice. López de Prado addresses these issues rigorously.
-
-**Implementation connections**: Implement every method. Demonstrate how standard CV produces overly optimistic results. Show how proper purging and embargo affect performance estimates. Build meta-labeling system. Implement bet sizing strategies. For R users, the `pbo` package implements the Probability of Backtest Overfitting and related diagnostics following Bailey et al.; see [`https://CRAN.R-project.org/package=pbo`](https://CRAN.R-project.org/package=pbo) for documentation and examples.
-
-**Common difficulties**: Book is dense and assumes sophistication in both finance and machine learning. Some techniques (particularly combinatorial cross-validation) prove computationally expensive. Focus on core concepts—sample weights, proper CV, bet sizing—before advanced techniques.
+Start with a time-ordered comparison. If return labels overlap the evaluation window, compare the result when you exclude those training labels. Chapter 7 discusses purging and embargo. Chapter 12 discusses combinatorial purged cross-validation. Bailey and colleagues estimate the probability of backtest overfitting by comparing the rankings of candidate strategies across complementary partitions. Use the annotated papers and course lab to distinguish those questions. [Backtest overfitting readings](../papers/essential-readings.md#42-backtest-overfitting-and-cv) · [Backtesting lab](https://financialdatascience.co.uk/labs/lab10_backtesting.html)
 
 **Complementary resource**: López de Prado's papers provide additional detail on specific topics. His website includes code examples and presentations.
 
@@ -242,71 +223,13 @@ Apply same rigour as traditional factors:
 
 Avoid promotional claims from data vendors. Demand empirical evidence with proper validation.
 
-## Common Pitfalls and How to Address Them
+## Decide what a better forecast is worth
 
-### Pitfall 1: Applying ML without understanding finance-specific issues
+Set the benchmark and time-ordered evaluation before tuning. Record the features, models and parameter combinations you try. If you report the winner of a strategy search, explain the search behind that result and check how often its ranking changes across partitions. Keep that diagnosis distinct from the evaluation of a forward trading rule.
 
-**Symptom**: Using standard cross-validation on serially dependent time series, leading to information leakage and overly optimistic results.
+Report both forecast performance and the performance of the portfolio that uses it. An improvement in prediction may have little economic value after turnover and trading costs. Compare a simple rule with the same investable universe and cost assumptions. Show how results vary by period and how they change under a different cost or market-impact estimate.
 
-**Problem**: Machine learning methods developed for i.i.d. data don't translate directly to financial time series. Serial dependence, non-stationarity, and low signal-to-noise ratios require modifications.
-
-**Solution**: Study López de Prado carefully. Implement purging, embargo, and walk-forward validation. Never shuffle time series data. Test for lookahead bias systematically.
-
-### Pitfall 2: Factor proliferation and data mining
-
-**Symptom**: Testing hundreds of potential factors, reporting those achieving statistical significance without multiple testing adjustment.
-
-**Problem**: With enough trials, spurious patterns emerge. Standard significance levels don't account for multiple comparisons.
-
-**Solution**: Pre-register hypotheses where possible. Apply Bonferroni correction or FDR control. Read Harvey, Liu & Zhu (2016) on multiple testing in asset pricing. Focus on factors with economic rationale, not just statistical significance.
-
-### Pitfall 3: Overfitting through hyperparameter search
-
-**Symptom**: Extensive hyperparameter optimization producing impressive backtest results that fail out-of-sample.
-
-**Problem**: Searching across many hyperparameter combinations induces overfitting, even with proper cross-validation.
-
-**Solution**: Limit hyperparameter search space. Use validation set separate from test set. Implement probability of backtest overfitting measure (López de Prado). Prefer simple models with fewer parameters.
-
-### Pitfall 4: Ignoring transaction costs and market impact
-
-**Symptom**: High-turnover strategies appearing profitable before costs but unprofitable after realistic cost accounting.
-
-**Problem**: Machine learning models often generate high-turnover signals. Transaction costs and market impact eat profits.
-
-**Solution**: Always account for realistic transaction costs. Include turnover as optimization objective alongside returns. Consider transaction cost-adjusted Sharpe ratio. Sometimes simpler, lower-turnover model proves more profitable after costs.
-
-### Pitfall 5: Confusing statistical and economic significance
-
-**Symptom**: Celebrating statistically significant predictive R² of 0.5% as major achievement.
-
-**Problem**: Statistical significance doesn't imply economic significance. Low R² may not generate implementable strategies after transaction costs.
-
-**Solution**: Always evaluate economic significance. Can predictions generate positive Sharpe ratio after costs? What information ratio achieved? Does strategy capacity justify development effort?
-
-### Pitfall 6: Neglecting regime changes and adaptation
-
-**Symptom**: Strategies optimized to historical data failing when market structure or factor dynamics change.
-
-**Problem**: Financial markets non-stationary. Regulatory changes, technological evolution, and market participant adaptation cause strategies to decay.
-
-**Solution**: Test robustness across time periods and market regimes. Understand economic rationale—what market friction creates opportunity? Monitor strategy performance continuously. Implement adaptive methods adjusting to regime changes.
-
-## Integration of Methods
-
-Modern quantitative strategies integrate methods from multiple domains:
-
-**Factor models** provide economic intuition for return drivers.
-
-**Machine learning** captures non-linear relationships and interactions between factors.
-
-**Econometric methods** enable causal inference and proper statistical testing.
-
-**Microstructure understanding** ensures realistic implementation accounting for transaction costs.
-
-**Software engineering practices** enable robust implementation and maintenance.
-
-The complete quantitative researcher combines these capabilities rather than specialising narrowly in one area.
+Interpret the result in terms of the financial question. State when each predictor was available and why it could matter. Explain which patterns you can document and which economic mechanisms would need a different research design to test. [Essential readings](../papers/essential-readings.md)
 
 ## Implementation Projects
 

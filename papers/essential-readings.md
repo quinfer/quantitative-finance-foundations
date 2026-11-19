@@ -1,39 +1,12 @@
 # Essential Readings in Quantitative Finance
 
-## Purpose and Scope
+Start with a paper that addresses a question you are working on. In a factor study, for example, pick one table and identify the portfolio returns, the benchmark and the quantity the authors estimate. Then use the suggestions below to reproduce the comparison or ask a related question with data you can obtain.
 
-This document provides a curated set of core research papers that underpin the curriculum in `CURRICULUM.md` and the thematic guides in `resources/`. It is not an exhaustive bibliography but a **minimum viable canon** of papers that students should understand deeply by the end of the 12‑month programme.
-
-For each paper, you’ll find:
-
-- **Citation** (author, year, title, outlet)
-- **Theme** and **curriculum phase** where it fits
-- **Key contribution** and why it matters
-- **Implementation / replication suggestions**
-
-Use this document to prioritise reading and to structure replication projects in the `papers/` and `implementations/` directories.
-
-## How to Use This Document
-
-- **By phase**: At each curriculum phase, focus on the papers tagged for that phase.
-- **By theme**: When working in a given area (e.g., microstructure, factors), read the papers in that theme systematically.
-- **Actively, not passively**: For each paper:
-  - Reproduce key tables/figures where data are available.
-  - Implement core models in Python.
-  - Compare results across time periods and markets.
-  - Document deviations and potential reasons.
-
-When filing papers in this repository:
-
-- Store them under the appropriate thematic subdirectory in `papers/`.
-- Create a `notes.md` in each paper folder summarising core insights, methodology, and replication status.
-- Place replication code in a `replication/` subdirectory and cross‑link from `implementations/`.
-
----
+Choose by topic when you have a research question, or follow the phase guide when you are working through the curriculum. [Curriculum](../CURRICULUM.md) · [Readings by phase](#6-connecting-papers-to-curriculum-phases) · [Replication strategy](#implementation-and-replication-strategy)
 
 ## 1. Asset Pricing and Factor Models
 
-These papers support **Phase 2–4** (Econometric Methods and Advanced Applications) and live primarily under `papers/asset-pricing/`.
+Use these papers to compare explanations for differences in average returns and to examine the evidence behind a proposed factor.
 
 ### 1.1 Cross-Section of Returns and Classic Factors
 
@@ -64,12 +37,12 @@ These papers support **Phase 2–4** (Econometric Methods and Advanced Applicati
 
 ### 1.2 Modern Factor and Mispricing Debates
 
-**Fama, E. F., & French, K. R. (2015).** *A Five-Factor Asset Pricing Model*. Journal of Financial Economics.  
+**Fama, E. F., & French, K. R. (2015).** *[A Five-Factor Asset Pricing Model](https://doi.org/10.1016/j.jfineco.2014.10.010)*. Journal of Financial Economics.\
 **Theme**: Factor proliferation, profitability and investment factors (Phase 4)  
-**Key contribution**: Extends three‑factor model with profitability and investment, questioning value’s independent role.  
+**Key contribution**: Adds profitability and investment to the three-factor model. The value factor appears redundant for describing average returns in the sample the authors examine.\
 **Implementation ideas**:
 - Construct five‑factor returns (or use published series).
-- Test whether value adds explanatory power beyond five factors.
+- Compare the five-factor model with the same model excluding the value factor. State whether your result holds for the assets and period you test.
 - Compare implications for factor‑tilted portfolios.
 
 **Hou, K., Xue, C., & Zhang, L. (2015).** *Digesting Anomalies: An Investment Approach*. Review of Financial Studies.  
@@ -85,7 +58,7 @@ These papers support **Phase 2–4** (Econometric Methods and Advanced Applicati
 **Harvey, C. R., Liu, Y., & Zhu, H. (2016).** *… and the Cross-Section of Expected Returns*. Review of Financial Studies.  
 **Theme**: Multiple testing, factor proliferation (Phase 2–4)  
 **Key contribution**: Argues that standard 5% significance is too lax given hundreds of factors; proposes higher t‑stat thresholds.  
-**Why it matters**: Sets standards for distinguishing genuine factors from data‑mined noise.  
+**Why it matters**: Shows why the evidence needed to propose a new factor depends on the wider history of tests.\
 **Implementation ideas**:
 - Apply their adjusted significance thresholds to your own factor tests.
 - Re‑evaluate significance of popular factors in your sample.
@@ -95,7 +68,7 @@ These papers support **Phase 2–4** (Econometric Methods and Advanced Applicati
 
 ## 2. Market Microstructure and Liquidity
 
-These papers support **Phase 3** (Market Microstructure) and belong in `papers/market-microstructure/` (some overlap with `asset-pricing/` for liquidity premia).
+Read these papers alongside the spread and execution tasks. Start with how the authors turn trades and quotes into a measure of liquidity.
 
 ### 2.1 Spreads, Transaction Costs, and Impact
 
@@ -149,7 +122,7 @@ These papers support **Phase 3** (Market Microstructure) and belong in `papers/m
 
 ## 3. Econometric Methods and Time Series
 
-These papers support **Phase 2** and live under `papers/econometric-methods/`.
+Use these papers when an exercise asks you to model dependence, quantify uncertainty or choose an estimator.
 
 ### 3.1 Volatility Modelling
 
@@ -205,16 +178,16 @@ These papers support **Phase 2** and live under `papers/econometric-methods/`.
 
 ## 4. Machine Learning and Overfitting in Finance
 
-These papers support **Phase 2–4** and belong under `papers/machine-learning/`.
+Separate two questions as you read. First, does a model improve return forecasts on later data? Second, how does selecting the best result from many trials affect its interpretation?
 
 ### 4.1 ML for Asset Pricing
 
-**Gu, S., Kelly, B., & Xiu, D. (2020).** *Empirical Asset Pricing via Machine Learning*. Review of Financial Studies.  
+**Gu, S., Kelly, B., & Xiu, D. (2020).** *[Empirical Asset Pricing via Machine Learning](https://doi.org/10.1093/rfs/hhaa009)*. Review of Financial Studies.\
 **Theme**: ML for cross‑sectional return prediction (Phase 4)  
-**Key contribution**: Applies a range of ML methods (trees, neural networks, etc.) to predict returns from many characteristics; shows substantial improvements over linear models.  
+**Key contribution**: Compares methods for predicting stock returns in the authors' data. Trees and neural networks lead the comparison, and the authors trace gains to nonlinear interactions between predictors.\
 **Implementation ideas**:
 - Implement a subset of their methods on a reduced characteristic set.
-- Compare OOS performance of linear vs. non‑linear models.
+- Compare linear and nonlinear models on the same later observations.
 - Examine feature importance and economic interpretability.
 
 **Rasekhschaffe, K. C., & Jones, R. C. (2019).** *Machine Learning for Stock Selection*. Financial Analysts Journal.  
@@ -225,26 +198,26 @@ These papers support **Phase 2–4** and belong under `papers/machine-learning/`
 
 ### 4.2 Backtest Overfitting and CV
 
-**Bailey, D. H., Borwein, J., López de Prado, M., & Zhu, Q. J. (2014).** *The Probability of Backtest Overfitting*. Journal of Computational Finance.  
+**Bailey, D. H., Borwein, J. M., López de Prado, M., & Zhu, Q. J. (2017).** *[The Probability of Backtest Overfitting](https://doi.org/10.21314/jcf.2016.322)*. Journal of Computational Finance.\
 **Theme**: Backtest overfitting (Phase 4)  
-**Key contribution**: Formalises notion of backtest overfitting and proposes procedures to estimate its probability.  
+**Key contribution**: Uses combinatorially symmetric cross-validation to estimate how often a strategy selected as best on one partition ranks below the median on its complement.\
 **Implementation ideas**:
 - Replicate simple examples of overfitted strategies.
 - Implement their probability‑of‑backtest‑overfitting metric.
 
-**López de Prado, M. (2013/2018).** *Backtest Overfitting in Financial Machine Learning* (various versions).  
+**López de Prado, M. (2018).** *[Advances in Financial Machine Learning](https://www.wiley.com/en-au/Advances%2Bin%2BFinancial%2BMachine%2BLearning-p-9781119482086)*. Wiley, Chapters 7 and 12.\
 **Theme**: Cross‑validation and ML pitfalls (Phase 4)  
 **Implementation ideas**:
 - Implement purged and embargoed cross‑validation.
-- Compare naïve CV vs. proper CV on your own strategies.
+- Compare ordinary and purged cross-validation for overlapping return labels. Separately, use a walk-forward evaluation to test a rule as it would have run through time.
 
-For R users, a reference implementation of the Probability of Backtest Overfitting methodology is available in the `pbo` package on CRAN: see [`https://CRAN.R-project.org/package=pbo`](https://CRAN.R-project.org/package=pbo) for documentation and vignettes [`https://CRAN.R-project.org/package=pbo`](https://CRAN.R-project.org/package=pbo).
+To reproduce the strategy selection exercise, use the [Financial Data Science backtesting lab](https://financialdatascience.co.uk/labs/lab10_backtesting.html). For an R implementation of the probability of backtest overfitting, see the [pbo package](https://CRAN.R-project.org/package=pbo).
 
 ---
 
 ## 5. Portfolio Construction and Risk
 
-These papers support **Phase 1–4** and belong under `papers/portfolio-construction/`.
+Read Markowitz to understand the portfolio problem when expected returns and covariances are given. Then ask how estimation changes the weights and the later results.
 
 ### 5.1 Foundations
 
@@ -263,9 +236,9 @@ These papers support **Phase 1–4** and belong under `papers/portfolio-construc
 
 ### 5.2 Estimation Error and Robust Portfolio Choice
 
-**DeMiguel, V., Garlappi, L., & Uppal, R. (2009).** *Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?* Review of Financial Studies.  
+**DeMiguel, V., Garlappi, L., & Uppal, R. (2009).** *[Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?](https://doi.org/10.1093/rfs/hhm075)* Review of Financial Studies.\
 **Theme**: Estimation risk and naïve diversification (Phase 2–4)  
-**Key contribution**: Shows that simple 1/N diversification often outperforms optimised portfolios out‑of‑sample due to estimation error.  
+**Key contribution**: Finds that the optimised rules tested do not consistently beat equal weighting across the datasets examined. The authors link the result to estimation error.\
 **Implementation ideas**:
 - Reproduce their comparison between 1/N and optimised portfolios.
 - Investigate impact of sample length and number of assets.
@@ -303,34 +276,15 @@ These papers support **Phase 1–4** and belong under `papers/portfolio-construc
 - Fama–French (2015), Hou–Xue–Zhang (2015) – modern factor models.
 - Harvey–Liu–Zhu (2016) – multiple testing standards.
 - Gu–Kelly–Xiu (2020), Rasekhschaffe–Jones (2019) – ML for asset pricing.
-- Bailey et al. (2014), López de Prado – backtest overfitting and CV.
+- Bailey et al. (2017), López de Prado – backtest overfitting and CV.
 - DeMiguel–Garlappi–Uppal (2009), Ledoit–Wolf (2004) – robust portfolio choice.
 
 ---
 
 ## Implementation and Replication Strategy
 
-To integrate these papers into your learning:
+1. Choose one result and write down the financial question, sample and method. Record which inputs and choices you need to recover the result.
+2. Reproduce the table or figure where the inputs are available. If you use a substitute sample or change the design, label the result as an extension and explain the difference.
+3. Change one assumption or choice at a time. Report where the result holds up and where it changes, then give the commands needed to rerun your analysis.
 
-1. **Select a theme** (e.g., factor models, volatility, microstructure).  
-2. **Pick 1–2 core papers** from that theme.  
-3. **Create a folder** under the appropriate `papers/` subdirectory:
-   - e.g., `papers/asset-pricing/fama-french-1992/notes.md`
-4. **Write notes** summarising:
-   - Research question, data, methodology, and main findings.
-   - Strengths, limitations, and open questions.
-5. **Implement replication code** in `replication/` and/or `implementations/`:
-   - Strive to reproduce at least one core table or figure.
-   - Document discrepancies with the original paper.
-6. **Reflect in your journal** (see `QUICKSTART.md` and `CURRICULUM.md`):
-   - What did you learn?
-   - What was hard to reproduce, and why?
-   - How does this paper connect to others?
-
-Over time, this process builds a **personal library of deeply understood papers**, not just a list of PDFs.
-
----
-
-*This reading list supports the curriculum at Ulster University Business School’s Centre for Finance and Responsible Technology and is intended as a living document. Suggestions for additions or re‑organisation are welcome via issues and pull requests (see `CONTRIBUTING.md`).*
-
-
+Use your notes to connect the paper to the task it supports. [Quick Start](../QUICKSTART.md) · [Curriculum](../CURRICULUM.md) · [Contributing](../CONTRIBUTING.md)

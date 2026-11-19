@@ -22,15 +22,15 @@ Work through the pairs that fill gaps in your preparation. Then use the economet
 
 ## Working through the curriculum
 
-The two routes lead to the same programme of independent study. The preparation checklist covers undergraduate multivariate calculus, linear algebra and probability, together with regression, hypothesis testing and maximum likelihood. It also covers Python, asset pricing, portfolio theory and the basics of derivatives and market structure. Use it to identify what to study next. [Quick start](QUICKSTART.md) · [Curriculum](CURRICULUM.md)
+The two routes lead to the same programme of independent study. Use the Quick Start to check your preparation and calculate your first return series. The curriculum then takes you from portfolio returns and volatility to forecasting, execution and a research project you can reproduce. [Quick Start](QUICKSTART.md) · [Curriculum](CURRICULUM.md)
 
 When you read a paper, reproduce one result and keep a record of the data, assumptions and choices needed to obtain it. Change one choice at a time and explain what the result can still support. The readings give priority to work whose methods and evidence you can examine in this way.
 
 ## Repository guide
 
 - [Resources](resources/) contains annotated readings on mathematics, econometrics, market microstructure, programming and advanced topics.
-- [Papers](papers/) lists essential research papers with notes on what to read.
-- [Implementations](implementations/) and [exercises](exercises/) are under development. Treat code there as experimental until its documentation says it has been tested.
+- The [annotated reading list](papers/essential-readings.md) connects research papers to the curriculum and suggests results to reproduce.
+- The [curriculum](CURRICULUM.md) contains the tasks and projects. The [repository status](STATUS.md) describes the standalone exercises and worked examples still to be developed.
 
 ## Contributing and feedback
 
@@ -47,7 +47,7 @@ Ulster University Business School.
 https://github.com/quinfer/quantitative-finance-foundations
 ```
 
-## Institutional Context
+## Institutional context
 
 Professor Barry Quinn maintains this curriculum at the Centre for Finance and Responsible Technology, Ulster University Business School. The curriculum complements the Centre's programmes in quantitative finance and responsible technology. We welcome collaboration with other institutions developing similar programmes.
 

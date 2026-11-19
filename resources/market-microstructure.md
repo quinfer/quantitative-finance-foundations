@@ -1,21 +1,10 @@
 # Market Microstructure and Trading
 
-## Purpose and Scope
+A backtest may price every purchase at the midpoint between the bid and ask. An order that needs to trade immediately may pay the ask, and an order larger than the available quantity may trade at several prices. Market microstructure links those differences to the way orders become trades. Read the theory alongside trades, quotes and an execution problem. [Market microstructure in the curriculum](../CURRICULUM.md#phase-3-market-microstructure-months-79)
 
-Market microstructure studies how trading mechanisms and market structure affect price formation, liquidity provision, and transaction costs. Understanding microstructure proves essential for implementing quantitative strategies realistically—theoretical strategies that ignore transaction costs, market impact, and adverse selection often fail catastrophically in practice.
+## Preparation
 
-This section covers theoretical foundations of how markets function, empirical methods for measuring microstructure effects, and practical considerations for algorithmic trading and execution.
-
-## Prerequisites
-
-Before engaging with microstructure:
-
-- **Asset pricing fundamentals**: Understanding of efficient markets hypothesis, information and prices
-- **Econometric methods**: Time series analysis, limited dependent variable models
-- **Programming**: Ability to handle high-frequency data, implement order book dynamics
-- **Probability theory**: Poisson processes, martingales, optimal stopping
-
-If prerequisites aren't met, develop these foundations before attempting microstructure material.
+Start with a trade and its accompanying quote. Make sure you can work with time stamps and explain what a spread measures. Review information and prices, time-series methods and probability as you move into models of dealer behaviour and optimal execution.
 
 ## Core Resources
 
@@ -235,55 +224,13 @@ For students focusing on FX:
 4. **Recognise multi-venue complexity**: Liquidity fragmentation across platforms complicates execution
 5. **Account for triangular arbitrage**: Cross-rate relationships constrain prices across currency pairs
 
-## Common Pitfalls and How to Address Them
+## Check the execution assumptions
 
-### Pitfall 1: Ignoring transaction costs in backtests
+Begin with the price and quantity a strategy could have traded. Use the spread, available depth and any data on actual fills to decide how to model the difference between a reference price and an execution price. Show how results change when you vary order size, delay or the treatment of partially filled orders.
 
-**Symptom**: Strategy with impressive Sharpe ratio in backtest that loses money when implemented.
+For a liquidity-providing strategy, examine both fill rates and subsequent price movements. An order can be more likely to fill just before the price moves against it. State how the simulator models that selection and show how sensitive the result is to the assumption.
 
-**Problem**: Simulated trading assumes fills at midpoint or last price without accounting for bid-ask spreads, market impact, or adverse selection. Real trading costs overwhelm apparent alpha.
-
-**Solution**: Model transaction costs explicitly. Use bid-ask spread data when available. Estimate price impact as function of trade size and market conditions. Be conservative—underestimating costs is common error. Include slippage, delays, and partial fills.
-
-### Pitfall 2: Assuming infinite liquidity at quoted prices
-
-**Symptom**: Backtest assumes ability to trade any size at best bid/offer.
-
-**Problem**: Order book depth is finite. Large orders "walk the book", executing at progressively worse prices. Market impact increases non-linearly with order size.
-
-**Solution**: Incorporate order book depth data. Estimate price impact functions from empirical data. Scale strategy capacity realistically. Use optimal execution algorithms for large orders rather than naïve market orders.
-
-### Pitfall 3: Not accounting for adverse selection
-
-**Symptom**: Market making or liquidity provision strategy that appears profitable initially but deteriorates as informed traders select against you.
-
-**Problem**: Passive limit orders get picked off by informed traders when prices are about to move. You buy before price falls, sell before price rises.
-
-**Solution**: Study information-based microstructure models carefully. Implement measures of order flow toxicity. Adjust quotes or withdraw liquidity when adverse selection risk increases. Monitor fill rates and post-trade price movements.
-
-### Pitfall 4: Neglecting intraday patterns
-
-**Symptom**: Strategy performance varies dramatically by time of day despite no explicit time dependence in model.
-
-**Problem**: Volatility, spreads, and market impact exhibit strong intraday patterns. Market open and close feature elevated activity. Lunch hours are quiet. These patterns affect strategy profitability.
-
-**Solution**: Characterise intraday patterns empirically. Adjust position sizing and execution tactics by time of day. Avoid trading during market open/close if strategy relies on tight spreads. Use limit orders during liquid periods, market orders when urgency matters.
-
-### Pitfall 5: Overlooking market microstructure noise in high-frequency data
-
-**Symptom**: Volatility estimates or correlation measures that are biased or nonsensical when using tick data.
-
-**Problem**: Bid-ask bounce and asynchronous trading create noise in high-frequency prices. Naïve estimators using all ticks produce biased results.
-
-**Solution**: Study Hasbrouck Chapter 7 on high-frequency data analysis carefully. Use appropriate estimators (realised kernels, pre-averaging, Fourier methods) accounting for microstructure noise. Don't blindly apply methods designed for daily data to tick data.
-
-### Pitfall 6: Ignoring regulatory and market structure changes
-
-**Symptom**: Historical backtest performance doesn't persist after market structure changes.
-
-**Problem**: Markets evolve. Decimalisation, Reg NMS, MiFID II, and other regulatory changes fundamentally altered market microstructure. Historical data may not reflect current market conditions.
-
-**Solution**: Understand regulatory history and major market structure changes. Test strategy robustness across different regimes. Be sceptical of strategies exploiting anomalies that disappeared after well-publicised academic papers. Markets are adaptive.
+Compare spreads and volume across the trading day before applying a single cost estimate to every trade. For volatility estimated from transactions, check how the sampling interval changes the result. Bid–ask bounce and asynchronous trading can matter at fine intervals. Document market or rule changes that limit comparisons across periods.
 
 ## Practical Implementation Considerations
 

@@ -1,30 +1,16 @@
 # Econometric Methods for Financial Data
 
-## Purpose and Scope
+A volatility forecast and a study of whether an exchange rule changed volatility ask different questions. The forecast needs a fair test on later observations. The policy study needs a credible account of what would have happened without the change. Use this guide to match a method to the question before you estimate it. [Econometric methods in the curriculum](../CURRICULUM.md#phase-2-econometric-methods-months-46)
 
-Econometric methods enable rigorous inference from observational data—distinguishing genuine relationships from spurious correlations, testing economic theories against evidence, and building forecasting models with proper uncertainty quantification.
+## Preparation
 
-Financial data present distinctive challenges: serial correlation, conditional heteroskedasticity, non-stationarity, microstructure noise, and potential non-linear dynamics. Standard regression methods often fail without modification. This section focuses on methods specifically designed for financial time series and cross-sectional analysis.
-
-## Prerequisites
-
-Before engaging with econometric methods:
-
-- **Probability and statistics**: Hypothesis testing, maximum likelihood estimation, asymptotic theory
-
-- **Linear algebra**: Matrix notation for regression, eigenvalue problems
-
-- **Programming**: Python proficiency sufficient to implement estimators and diagnostic tests
-
-If prerequisites aren't met, review statistical foundations before attempting financial econometrics.
+You should be able to interpret a regression, a confidence interval and the assumptions behind them. Review matrix notation and maximum likelihood as needed. If financial time series are new to you, start by constructing returns and testing a simple forecast in the course lab. [Time series chapter and lab](../README.md#if-you-study-computer-science)
 
 ## Core Resources
 
 ### Analysis of Financial Time Series (Ruey S. Tsay)
 
-**What it provides**: Comprehensive treatment of time series methods specifically for financial applications, with emphasis on implementation and empirical examples. This is the standard reference for financial time series econometrics.
-
-**How to use it**: Work through systematically:
+Use Tsay to distinguish return forecasts from volatility forecasts. Start with Chapters 1–3 in the third edition. For cointegration, see Section 8.5. For state-space methods and the Kalman filter, see Chapter 11. [Publisher's contents](https://www.wiley.com/en-us/analysis-of-financial-time-series-3rd-edition-p-9780470414354)
 
 **Chapter 1: Financial Time Series and Their Characteristics**
 - Distributional properties of returns
@@ -39,7 +25,7 @@ If prerequisites aren't met, review statistical foundations before attempting fi
 **Chapter 3: Conditional Heteroscedastic Models**
 - ARCH and GARCH specifications
 - Asymmetric models (EGARCH, GJR-GARCH)
-- Multivariate GARCH models
+- See Chapter 10 for multivariate volatility models
 
 **Chapter 4: Nonlinear Models and Their Applications**
 - Threshold models and regime switching
@@ -56,7 +42,7 @@ If prerequisites aren't met, review statistical foundations before attempting fi
 - Jump detection
 - Term structure models
 
-**Implementation strategy**: Implement every major example using recent data. Tsay provides datasets, but updating to current market conditions reveals whether methods remain robust or were period-specific. Compare your implementations to R or Python packages, investigating any differences.
+Reproduce one example using Tsay's data or a comparable series. Match the specification and frequency before comparing results. Repeat the exercise in another period and explain which changes could arise from the sample or the implementation.
 
 **Common difficulties**: Chapter 3 (GARCH models) requires numerical optimisation of non-linear likelihood functions. Likelihood functions can be poorly behaved, leading to convergence failures. Students often struggle with diagnosing why estimation fails—is it model misspecification, starting values, or numerical issues?
 
@@ -192,71 +178,15 @@ If prerequisites aren't met, review statistical foundations before attempting fi
 
 **When to use**: After establishing frequentist foundations. Bayesian methods prove particularly valuable for incorporating parameter uncertainty in portfolio allocation and combining information from multiple models.
 
-## Common Pitfalls and How to Address Them
+## What your comparison can establish
 
-### Pitfall 1: Ignoring autocorrelation and heteroskedasticity
+For inference, match the standard errors to the dependence in the data. Residual diagnostics help you understand which assumptions are under pressure. Heteroskedasticity and autocorrelation consistent (HAC) standard errors address some forms of dependence in inference. A conditional volatility model serves a different purpose when volatility itself is the quantity you want to predict.
 
-**Symptom**: Using ordinary least squares standard errors for financial time series, leading to invalid inference.
+For forecasting, define what the model could have known at each decision. Tune it on rolling or expanding windows and reserve later observations for evaluation. Where outcomes span several periods, check that the outcomes used in fitting have ended before the evaluation window begins. Compare a regularised or nonlinear model with an ordinary least squares or simple forecasting benchmark on the same dates. Report the gain and its uncertainty.
 
-**Problem**: Financial returns exhibit serial correlation in squared returns (volatility clustering) even when returns themselves are unpredictable. Standard errors computed ignoring this dependence are inconsistent.
+For a causal claim, describe the institutional facts or research design that support the comparison. State how omitted variables, reverse causality or selection could change the interpretation. In a difference-in-differences design, for example, explain why the comparison group provides a credible account of how the treated group would have changed without the intervention.
 
-**Solution**: Always test for autocorrelation (Ljung-Box) and ARCH effects before conducting inference. Use Newey-West standard errors or model conditional heteroskedasticity explicitly through GARCH models.
-
-### Pitfall 2: Confusing in-sample fit with out-of-sample prediction
-
-**Symptom**: Models with impressive R-squared values in-sample that perform poorly out-of-sample.
-
-**Problem**: Models can overfit training data without generalising. This proves especially severe with high-dimensional data where number of predictors approaches sample size.
-
-**Solution**: Implement proper cross-validation. Never evaluate model performance using data that informed model specification or parameter estimation. Use rolling windows, expanding windows, or k-fold cross-validation appropriate to time series structure.
-
-### Pitfall 3: Misinterpreting regression coefficients causally
-
-**Symptom**: Concluding that X causes Y because regression coefficient is statistically significant.
-
-**Problem**: Regression captures conditional correlations, not causal effects. Omitted variables, reverse causality, and selection bias all generate spurious correlations.
-
-**Solution**: Think carefully about identification. What would invalidate causal interpretation? Are there omitted confounders? Is there reverse causality? Can you find instruments, natural experiments, or discontinuities enabling causal inference? Be honest about limitations.
-
-### Pitfall 4: Data snooping and multiple testing
-
-**Symptom**: Testing many predictors or models, reporting only significant results without adjustment for multiple testing.
-
-**Problem**: With enough attempts, spurious findings emerge. Standard significance levels don't account for search across specifications.
-
-**Solution**: Pre-register hypotheses where possible. Apply multiple testing corrections (Bonferroni, FDR control). Report full search process, not just successful specifications. See Harvey, Liu & Zhu (2016) on multiple testing in asset pricing.
-
-### Pitfall 5: Neglecting parameter uncertainty in portfolio allocation
-
-**Symptom**: Optimising portfolios using point estimates of expected returns and covariances as if they were known exactly.
-
-**Problem**: Estimation error in expected returns overwhelms true signal, leading to extreme allocations to seemingly high-return assets.
-
-**Solution**: Implement shrinkage methods (James-Stein, Bayesian approaches), regularisation (Ridge, Lasso), or constrained optimisation limiting extreme weights. Acknowledge uncertainty explicitly. Robust portfolio optimisation addresses worst-case scenarios.
-
-### Pitfall 6: Inappropriate application of methods from other fields
-
-**Symptom**: Applying machine learning methods designed for i.i.d. data to serially dependent financial time series without modification.
-
-**Problem**: Standard cross-validation becomes invalid with serial dependence (information leakage from test set to training set through temporal correlation). Shuffling data destroys time series structure.
-
-**Solution**: Use time series-appropriate validation (rolling windows, purging, embargo as described by López de Prado). Respect temporal ordering. Test for lookahead bias systematically.
-
-## Integration with Statistical Learning
-
-Modern quantitative finance increasingly combines traditional econometrics with machine learning. Key considerations:
-
-**Regularisation helps with estimation error**: High-dimensional factor models benefit from shrinkage methods (Ridge, Lasso, Elastic Net) reducing variance at cost of small bias.
-
-**Tree-based methods capture non-linearities**: When relationships between predictors and returns are non-linear or involve interactions, tree methods (random forests, gradient boosting) often outperform linear models.
-
-**Cross-validation must respect time series structure**: Use rolling or expanding windows. Never shuffle time series data for k-fold cross-validation.
-
-**Interpretability matters**: Black-box predictions without understanding why may perform well but provide no economic insight and no guidance when models fail.
-
-**Statistical significance requires adjustment**: With many predictors and models, apparent significance often reflects data mining rather than genuine predictability. Apply multiple testing corrections.
-
-The combination of econometric reasoning about identification and causal inference with modern prediction methods proves powerful, but requires care in implementation.
+When you search many specifications, record the tests and identify the family they belong to before choosing a multiple-testing adjustment. If the result informs portfolio weights, compare the allocation and its later performance with a simple benchmark and test sensitivity to estimation error. [Multiple testing and portfolio choice](../papers/essential-readings.md)
 
 ## Implementation Exercises
 
