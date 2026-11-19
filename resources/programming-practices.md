@@ -1,20 +1,10 @@
 # Implementation Practice and Software Engineering
 
-## Purpose and Scope
+A notebook can produce a plausible return series even when the input dates are reversed. A small test with a known answer can catch that error. Version control and a record of the inputs then let you explain how a result changed. Start with the data and checks for one calculation, and organise the analysis so someone else can rerun it. [Quick Start](../QUICKSTART.md)
 
-Rigorous quantitative finance requires not just understanding methods but implementing them correctly, reproducibly, and maintainably. Poor software practices lead to bugs that invalidate results, inability to reproduce findings, and code that becomes unmaintainable as complexity grows.
+## Preparation
 
-This section covers software engineering practices specific to quantitative finance: version control, testing, documentation, code organisation, and building production-quality research pipelines.
-
-## Prerequisites
-
-Before engaging with implementation practice:
-
-- **Python fundamentals**: Data structures, control flow, functions, classes
-- **Basic command line**: Navigating file systems, running scripts
-- **Some coding experience**: Have written and debugged Python programs
-
-If prerequisites aren't met, complete introductory Python course first (e.g., Python for Everybody, Automate the Boring Stuff with Python).
+You should be able to run a Python script and write a function. Use the return calculation in the Quick Start to practise loading a file with pandas. Then use the examples below to move repeated steps into functions and test them.
 
 ## Core Resources
 
@@ -582,55 +572,13 @@ For research projects, document:
 
 This documentation proves essential for reproducibility and for writing up results.
 
-## Common Pitfalls and How to Address Them
+## Make the result easy to inspect
 
-### Pitfall 1: Notebook-driven development without modules
+Move repeated calculations from the notebook into named functions. Pass paths, dates and model settings as inputs so a reader can see which choices produced the result. Keep the notebook for the figures, comparisons and explanation.
 
-**Symptom**: All code lives in Jupyter notebooks. Copying code between notebooks for reuse. Difficult to test or maintain.
+Check boundary cases that matter for the financial calculation. Use a short return series with a known result and include an example with a missing observation. If the software encounters an input it cannot handle, report the file or setting that caused the error. Use version control to record changes to inputs or assumptions along with the corresponding change to the result.
 
-**Problem**: Notebooks excellent for exploration but poor for production code. Lack of modularity leads to code duplication. Testing notebooks is difficult.
-
-**Solution**: Use notebooks for exploration and visualization. Once code stabilises, move to modules in src/. Import modules into notebooks. Write tests for module code. Keep notebooks focused on analysis and presentation.
-
-### Pitfall 2: No version control
-
-**Symptom**: Files named `analysis_v1.py`, `analysis_v2.py`, `analysis_final.py`, `analysis_final_revised.py`. No record of what changed when or why.
-
-**Problem**: Cannot track changes, recover from mistakes, or understand code evolution. Collaboration becomes nightmare. No way to identify when bugs were introduced.
-
-**Solution**: Use Git from project start. Commit frequently with meaningful messages. Never make new copies of files for versions—use Git branches instead.
-
-### Pitfall 3: No tests
-
-**Symptom**: Code breaks when making changes. Bugs discovered months after introduction. No confidence in correctness of results.
-
-**Problem**: Without tests, refactoring is dangerous and maintenance becomes progressively harder. Cannot verify implementations are correct.
-
-**Solution**: Write tests concurrently with code development. Start with simple tests verifying basic properties. Add regression tests when fixing bugs. Use continuous integration to run tests automatically.
-
-### Pitfall 4: Hardcoded parameters and paths
-
-**Symptom**: Parameters scattered throughout code. File paths hardcoded with absolute references. Must edit code to change settings.
-
-**Problem**: Makes code inflexible and non-portable. Difficult to run experiments with different parameters. Code breaks when moving between machines.
-
-**Solution**: Store configuration in separate files (YAML, JSON, ConfigParser). Pass parameters as function arguments. Use relative paths or configuration for file locations.
-
-### Pitfall 5: Poor error handling
-
-**Symptom**: Code crashes with cryptic error messages. Silent failures producing incorrect results. Difficulty debugging problems.
-
-**Problem**: Without good error handling, failures are hard to diagnose and fix. Silent failures are particularly dangerous in finance—bad results worse than obvious crashes.
-
-**Solution**: Validate inputs explicitly. Raise informative exceptions when preconditions violated. Use assertions for invariants. Log important steps and decisions.
-
-### Pitfall 6: No code review or peer feedback
-
-**Symptom**: Code written in isolation without feedback. Bugs and bad practices persist. Idiosyncratic style makes collaboration difficult.
-
-**Problem**: Solo development misses errors and opportunities for improvement. Code becomes personal rather than professional.
-
-**Solution**: Have colleagues review code. Review others' code. Use pull requests for collaborative development. Participate in code review process actively.
+Ask someone to rerun the analysis using only the documented inputs and commands. If they need to ask which file or step you used, record the answer for the next reader.
 
 ## Performance Considerations
 

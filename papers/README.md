@@ -1,40 +1,5 @@
-# Papers
+# Research papers
 
-This directory contains essential research papers with annotations and context. Papers are selected based on:
+Use the annotated list to find a paper that helps answer a question from the curriculum. Each entry gives a citation and a way to engage with the method, often by reproducing a result or testing a related question on a different sample. [Essential readings](essential-readings.md) · [Readings by curriculum phase](essential-readings.md#6-connecting-papers-to-curriculum-phases)
 
-- Methodological innovation and rigour
-- Empirical validation and robustness
-- Lasting influence on quantitative finance practice
-- Pedagogical value for curriculum development
-
-## Organisation
-
-Papers are organised by theme with accompanying notes:
-
-- `essential-readings.md` - Core cross-theme reading list with annotations and curriculum links
-- `asset-pricing/` - Factor models, cross-sectional predictability, and risk premia
-- `market-microstructure/` - Liquidity, price discovery, and high-frequency trading
-- `econometric-methods/` - Time series analysis, causal inference, and forecasting
-- `machine-learning/` - Applications of statistical learning to finance
-- `portfolio-construction/` - Optimisation, risk management, and implementation
-
-## Annotation Guidelines
-
-Each paper directory includes:
-
-- PDF of the published paper (where licensing permits)
-- `notes.md` summarising key contributions, methodology, and findings
-- `replication/` directory with code reproducing main results (where feasible)
-- Links to author websites, working papers, and related resources
-
-## Reading Strategy
-
-Don't attempt comprehensive coverage. Focus on:
-
-1. Papers directly relevant to your current research questions
-2. Methodological papers introducing techniques you're implementing
-3. Papers demonstrating best practices in empirical analysis
-4. Classic papers providing historical context for current debates
-
-Read actively: replicate results, question assumptions, identify limitations, and consider extensions.
-
+Start with one table or figure. Write down the sample, the comparison and the quantity it estimates. If you can obtain the inputs, try to reproduce it. If you use substitute data or change the design, record the difference so another reader can see what your exercise establishes. [Replication guidance](essential-readings.md#implementation-and-replication-strategy)

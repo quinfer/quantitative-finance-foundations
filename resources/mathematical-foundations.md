@@ -1,22 +1,10 @@
 # Mathematical Foundations for Quantitative Finance
 
-## Purpose and Scope
+A portfolio's risk depends on how its assets move together. Start by calculating the variance of a two-asset portfolio by hand, then express the same calculation with a covariance matrix. That step gives linear algebra a purpose. Use simulation in the same way to connect probability and calculus to the methods they support. [Curriculum foundations](../CURRICULUM.md#phase-1-foundations-months-13)
 
-Mathematical preparation enables formal reasoning about uncertainty, dynamics, and optimisation—core concerns in quantitative finance. This differs from mathematics for pure theory: we need sufficient rigour to avoid errors whilst maintaining focus on application and implementation.
+## Preparation
 
-The goal is not comprehensive mastery of mathematical analysis or measure theory, but rather developing working knowledge of probability, linear algebra, calculus, and optimisation sufficient to understand quantitative methods, implement them correctly, and reason about their properties.
-
-## Prerequisites
-
-Before engaging with these resources:
-
-- **Undergraduate calculus**: Derivatives, integrals, Taylor series, multivariate optimisation
-
-- **Linear algebra basics**: Matrix operations, determinants, solving linear systems
-
-- **Probability fundamentals**: Sample spaces, random variables, expectation, variance
-
-If these prerequisites aren't met, address gaps first. Khan Academy, MIT OpenCourseWare, and Gilbert Strang's *Introduction to Linear Algebra* provide accessible foundations.
+Review derivatives and integrals, matrix operations and basic probability as the exercises call for them. Begin with Strang for linear algebra or Resnick for probability. Use Shreve when you need continuous-time models for pricing and hedging.
 
 ## Core Resources
 
@@ -109,53 +97,13 @@ The convergence concepts (Chapter 4) and conditioning (Chapter 5) prove essentia
 
 **When to use**: Reference when encountering statistical concepts in econometrics texts and wanting rigorous foundations. Not appropriate for initial learning—too abstract without applications.
 
-## Common Pitfalls and How to Address Them
+## Check the mathematics in a small case
 
-### Pitfall 1: Attempting comprehensive mastery before implementation
+Work a two-variable example by hand before you call a library. Compare the answers and make sure the inputs express the same problem. In the portfolio exercise, perturb the covariance matrix and record how the weights change. If a small perturbation leads to a large change, inspect the condition of the matrix and the constraints you imposed.
 
-**Symptom**: Spending months working through probability theory before writing any code.
+Use simulation to see what a mathematical result predicts. For a convergence result, write down the conditions first, then simulate one case that meets them and one that breaks a condition. The simulation illustrates the result and helps identify where your calculation or intuition has gone astray.
 
-**Problem**: Mathematical concepts remain abstract without implementation experience. You don't truly understand stochastic processes until you've simulated them and debugged your code.
-
-**Solution**: Implement simple versions concurrently with theoretical study. After learning about Brownian motion, simulate it. After studying martingales, implement examples. Theory and practice develop together.
-
-### Pitfall 2: Using libraries without understanding underlying mathematics
-
-**Symptom**: Calls `numpy.linalg.lstsq()` without understanding what least squares actually computes or why it might fail.
-
-**Problem**: When implementations fail or produce unexpected results, you can't diagnose problems or determine whether issues are mathematical, computational, or data-related.
-
-**Solution**: Implement simple cases from scratch before using sophisticated libraries. Solve 2x2 linear system by hand, then write Python code, then compare to numpy. This develops intuition for what libraries actually do.
-
-### Pitfall 3: Ignoring numerical stability and computational considerations
-
-**Symptom**: Implementations that work on toy examples but fail on real data due to ill-conditioned matrices, overflow, or underflow.
-
-**Problem**: Mathematical theory assumes exact arithmetic. Computers use finite-precision floating point arithmetic where naïve implementations fail.
-
-**Solution**: Study Brandimarte's numerical methods text alongside theoretical treatments. Learn to recognise when covariance matrices become ill-conditioned, when likelihood functions encounter overflow, when iterative algorithms fail to converge.
-
-### Pitfall 4: Confusing measure-theoretic formalism with practical understanding
-
-**Symptom**: Can recite definitions of σ-algebras but can't explain what conditional expectation actually means or compute it for specific examples.
-
-**Problem**: Measure theory provides rigorous foundations but doesn't substitute for intuition and practical facility with probability concepts.
-
-**Solution**: Always work concrete examples alongside abstract theory. For every theorem, construct examples satisfying and violating conditions. Verify results through simulation. Mathematical rigour and practical understanding develop together.
-
-## Integration with Other Topics
-
-Mathematical foundations support all subsequent work:
-
-**Econometric methods** require probability theory (convergence concepts, conditional expectation), linear algebra (matrix formulations of regression and GMM), and optimisation (maximum likelihood, GMM estimation).
-
-**Portfolio optimisation** requires linear algebra (matrix formulations, quadratic forms), optimisation theory (Lagrange multipliers, KKT conditions), and probability (expected utility, risk measures).
-
-**Derivatives pricing** requires stochastic calculus (Itô's lemma, Girsanov theorem), partial differential equations (Black-Scholes PDE), and numerical methods (finite differences, Monte Carlo).
-
-**Machine learning** requires linear algebra (SVD, eigenvalue methods), optimisation (gradient descent, convex optimisation), and probability (Bayesian inference, generalisation bounds).
-
-Rather than attempting complete mastery before proceeding, develop mathematical foundations concurrently with applications. Return to mathematical texts when encountering gaps in understanding during implementation.
+Return to these tools as you need them. Use projection and matrix algebra for regression, conditional expectation for forecasting, and stochastic calculus when you study continuous-time pricing. [Econometric methods](econometric-methods.md) · [Advanced topics](advanced-topics.md)
 
 ## Implementation Exercises
 

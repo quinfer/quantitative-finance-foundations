@@ -1,31 +1,5 @@
-# Implementations
+# Worked implementations
 
-This directory contains documented Python examples demonstrating rigorous quantitative finance practices. Each implementation includes:
+This directory is reserved for worked examples. To run an example now, use the linked Financial Data Science notebooks or work through a task in the curriculum. [Chapter and lab pairs](../README.md#if-you-study-computer-science) · [Curriculum tasks](../CURRICULUM.md)
 
-- Clear documentation of methodology and assumptions
-- Proper data handling and preprocessing
-- Comprehensive testing and validation
-- Reproducible results with version-controlled dependencies
-
-## Implementation Structure
-
-Implementations are organised by curriculum phase:
-
-- `foundations/` - Basic portfolio construction, optimisation, and GARCH models
-- `econometric-methods/` - Time series models, cointegration, and regularisation
-- `market-microstructure/` - Transaction cost analysis, optimal execution, and order book simulation
-- `advanced-applications/` - Factor strategies, machine learning pipelines, and synthesis projects
-
-## Best Practices
-
-All code follows principles from:
-
-- PEP 8 style guidelines
-- Type hints for key functions
-- Comprehensive docstrings
-- Unit tests for critical functionality
-- Requirements files pinning dependencies
-- Jupyter notebooks for exploratory analysis with clear narrative
-
-Quality and clarity matter more than sophistication. Code should be understandable, testable, and maintainable.
-
+If you contribute an example, state the financial question, document the data and assumptions, and give the commands needed to reproduce the result. Include a small check that can catch an error in the calculation before it reaches the full dataset. [Programming practices](../resources/programming-practices.md) · [Contribution guide](../CONTRIBUTING.md)
